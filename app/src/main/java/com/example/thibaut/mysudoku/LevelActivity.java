@@ -20,6 +20,9 @@ public class LevelActivity extends Activity {
         ButtonLevelEasy.setOnClickListener(new View.OnClickListener() {
             public void onClick(View button11) {
                 Intent intentEasy = new Intent(LevelActivity.this, ListActivity.class);
+                Bundle objetBundle = new Bundle();
+                objetBundle.putInt("level", 1);
+                intentEasy.putExtras(objetBundle);
                 startActivity(intentEasy);
             }
         });
@@ -27,6 +30,9 @@ public class LevelActivity extends Activity {
         ButtonLevelMedium.setOnClickListener(new View.OnClickListener() {
             public void onClick(View button11) {
                 Intent intentMedium = new Intent(LevelActivity.this, ListActivity.class);
+                Bundle objetBundle = new Bundle();
+                objetBundle.putInt("level", 2);
+                intentMedium.putExtras(objetBundle);
                 startActivity(intentMedium);
             }
         });
@@ -34,6 +40,9 @@ public class LevelActivity extends Activity {
         ButtonLevelHard.setOnClickListener(new View.OnClickListener() {
             public void onClick(View button11) {
                 Intent intentHard = new Intent(LevelActivity.this, ListActivity.class);
+                Bundle objetBundle = new Bundle();
+                objetBundle.putInt("level", 3);
+                intentHard.putExtras(objetBundle);
                 startActivity(intentHard);
             }
         });
