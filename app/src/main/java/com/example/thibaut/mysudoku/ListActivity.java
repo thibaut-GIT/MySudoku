@@ -16,22 +16,18 @@ public class ListActivity extends Activity {
         setContentView(R.layout.activity_list);
 
         //Generation du tableau d'objet
-        int tab[][] = {{}};
-        int idItem = 1;
+        int tab[][] = new int[300][4];
+        int idItem = 0;
         for (int level=1; level<=3; level++) {
-            for (int i = 1; i <= 100; i++) {
+            for (int i = 0; i <= 99; i++) {
                 for (int j = 0; j <= 3; j++) {
-                    if (j == 0) { tab[idItem][j] = idItem; }
-                    /*
                     switch(j) {
-
                         case 0: tab[idItem][j] = idItem; break;
                         case 1: tab[idItem][j] = level; break;
                         case 2: tab[idItem][j] = i; break;
                         case 3: tab[idItem][j] = 0; break;
                         default: break;
                     }
-                    */
                 }
                 idItem++;
             }
