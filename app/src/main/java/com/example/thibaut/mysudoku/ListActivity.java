@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 public class ListActivity extends Activity {
@@ -25,7 +26,7 @@ public class ListActivity extends Activity {
                         case 0: tab[idItem][j] = idItem; break;
                         case 1: tab[idItem][j] = level; break;
                         case 2: tab[idItem][j] = i; break;
-                        case 3: tab[idItem][j] = 0; break;
+                        case 3: tab[idItem][j] = (int)(Math.random()*(101)); break;
                         default: break;
                     }
                 }
@@ -33,15 +34,22 @@ public class ListActivity extends Activity {
             }
         }
 
+        //Recuperation du bundle
+        Bundle objetbundle = this.getIntent().getExtras();
+        int level = objetbundle.getInt("level");
 
         //Creation de la liste
-        /*
         final ListView listview = (ListView) findViewById(R.id.listeId);
-        String[] values = new String[] {"Liste de Contacts", "A propos"};
-
+        String[] values = new String[100];
+        int compteur = 0;
+        for (int i=0; i<tab.length; i++) {
+                if (tab[i][1] == level) {
+                    values[compteur] =  Integer.toString(tab[i][2]) + " - " + Integer.toString(tab[i][3]);
+                    compteur++;
+                }
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,android.R.id.text1,values);
         listview.setAdapter(adapter);
-*/
     }
 }
